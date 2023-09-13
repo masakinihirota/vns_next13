@@ -36,7 +36,7 @@ export async function middleware(req: NextRequest) {
     !req.nextUrl.pathname.startsWith("/_next")
   ) {
     return NextResponse.redirect(
-      new URL(`/${lng}${req.nextUrl.pathname}`, req.url)
+      new URL(`/${lng}${req.nextUrl.pathname}`, req.url),
     );
   }
 
@@ -45,7 +45,7 @@ export async function middleware(req: NextRequest) {
   if (refererHeaderValue !== null) {
     const refererUrl = new URL(refererHeaderValue);
     const lngInReferer = languages.find((l) =>
-      refererUrl.pathname.startsWith(`/${l}`)
+      refererUrl.pathname.startsWith(`/${l}`),
     );
     const res = NextResponse.next();
     if (lngInReferer) res.cookies.set(cookieName, lngInReferer);
