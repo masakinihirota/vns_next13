@@ -3,7 +3,7 @@ import { Footer } from "./components/Footer";
 import { useTranslation } from "../i18n";
 
 export default async function Page({ params: { lng } }) {
-  console.log("lng", lng);
+  // console.log("lng", lng);
 
   const { t } = await useTranslation(lng);
   return (
