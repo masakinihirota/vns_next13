@@ -8,7 +8,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body>
+      <body suppressHydrationWarning={true}>
         {/* ↓ログイン画面に影響を与えている */}
         <main className="flex flex-col items-center min-h-screen bg-background">
           {children}
