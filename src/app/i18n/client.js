@@ -20,8 +20,8 @@ i18next
   .use(LanguageDetector)
   .use(
     resourcesToBackend((language, namespace) =>
-      import(`./locales/${language}/${namespace}.json`)
-    )
+      import(`./locales/${language}/${namespace}.json`),
+    ),
   )
   .init({
     ...getOptions(),
