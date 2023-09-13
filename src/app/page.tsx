@@ -2,17 +2,8 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import Link from "next/link";
 import LogoutButton from "../components/LogoutButton";
-import SupabaseLogo from "../components/SupabaseLogo";
-import NextJsLogo from "../components/NextJsLogo";
 
 export const dynamic = "force-dynamic";
-
-const examples = [
-  { type: "Client Components", src: "app/examples/client-component/page.tsx" },
-  { type: "Server Components", src: "app/examples/server-component/page.tsx" },
-  { type: "Server Actions", src: "app/examples/server-action/page.tsx" },
-  { type: "Route Handlers", src: "app/examples/route-handler.ts" },
-];
 
 export default async function Index() {
   const supabase = createServerComponentClient({ cookies });
@@ -54,6 +45,17 @@ export default async function Index() {
           </div>
         </div>
       </nav>
+      <main className="flex flex-col w-full max-w-4xl p-3 text-xl text-foreground">
+        <Link href="./examples/client-component">Client Component Example</Link>
+        <Link href="./examples/route-handler">Route Handler Example</Link>
+        <Link href="./examples/server-action">Server Action Example</Link>
+        <Link href="./examples/server-component">Server Component Example</Link>
+        <br />
+        {/* <Link href={`/${lng}/login`}></Link> */}
+        <Link href={`/en`}>英語</Link>
+        <Link href="/de">ドイツ語</Link>
+        <Link href="/ja">日本語</Link>
+      </main>
     </div>
   );
 }
