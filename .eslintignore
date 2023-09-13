@@ -1,0 +1,34 @@
+# config
+.eslintrc.json
+.prettierrc
+next.config.js
+tailwind.config.js
+tsconfig.json
+postcss.config.js
+
+# build dir
+build/
+bin/
+obj/
+out/
+.next/
+
+# 自動生成されたファイル
+package-lock.json
+
+# Storybook
+*.stories.ts
+*.stories.tsx
+
+# CSSファイル
+*.css
+
+# mdxファイル
+*.mdx
+
+# すべての画像ファイルを除外する
+**/*.png
+**/*.jpg
+**/*.jpeg
+**/*.gif
+**/*.ico
