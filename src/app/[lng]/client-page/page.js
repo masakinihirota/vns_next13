@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
+
 import { useTranslation } from "../../i18n/client";
 import { Footer } from "../components/Footer/client";
-import { useState } from "react";
 
 export default function Page({ params: { lng } }) {
   const { t } = useTranslation(lng, "client-page");
