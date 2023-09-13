@@ -31,7 +31,7 @@ export default async function Index() {
           <div>
             {user ? (
               <div className="flex items-center gap-4">
-                Hey, {user.email}!
+                Welcome to VNS.BLUE, {user.email}!
                 <LogoutButton />
               </div>
             ) : (
