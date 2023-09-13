@@ -45,6 +45,8 @@ export default async function Index() {
           </div>
         </div>
       </nav>
+
+      {/* メイン部分 */}
       <main className="flex flex-col w-full max-w-4xl p-3 text-xl text-foreground">
         <Link href="./examples/client-component">Client Component Example</Link>
         <Link href="./examples/route-handler">Route Handler Example</Link>
@@ -56,6 +58,10 @@ export default async function Index() {
         <Link href="/de">ドイツ語</Link>
         <Link href="/ja">日本語</Link>
       </main>
+      <div />
+      <footer className="flex items-center justify-center h-16">
+        VNS.BLUE 2023
+      </footer>
     </div>
   );
 }
