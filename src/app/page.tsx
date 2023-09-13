@@ -22,10 +22,21 @@ export default async function Index() {
   } = await supabase.auth.getUser();
 
   return (
+    // 全体を縦にならべている、幅いっぱいに並べている
     <div className="flex flex-col items-center w-full">
+      {/* nav部分 Home ,Advertisement, Dark mode,Language, Login */}
+      {/* ナビ部分の高さを決めている、ボーダーラインボトムを描いている ボーダー色は現在の文字色
+      ナビ部分とメイン部分の分離箇所 */}
       <nav className="flex justify-center w-full h-16 border-b border-b-foreground/10">
+        {/* ナビ部分 上下中央に揃えている 横に均等にならべている 幅いっぱいに使っている */}
         <div className="flex items-center justify-between w-full max-w-4xl p-3 text-sm text-foreground">
+          VNS.BLUE
           <div />
+          Dark mode
+          <div />
+          Language
+          <div />
+          Advertisement
           <div>
             {user ? (
               <div className="flex items-center gap-4">
@@ -44,37 +55,20 @@ export default async function Index() {
         </div>
       </nav>
 
-      <div className="flex flex-col max-w-4xl px-3 py-16 opacity-0 animate-in gap-14 lg:py-24 text-foreground">
-        <div className="flex flex-col gap-8 text-foreground">
-          <div className="justify-center w-full overflow-hidden border rounded-lg">
-            {examples.map(({ type, src }) => (
-              <div
-                key={type}
-                className="grid w-full grid-cols-3 text-sm border-b last:border-b-0"
-              >
-                <div className="flex items-center w-full p-4 font-bold min-h-12">
-                  {type}
-                </div>
-                <div className="flex items-center col-span-2 p-4 border-l">
-                  <code className="text-sm whitespace-pre-wrap">{src}</code>
-                </div>
-              </div>
-            ))}
+      <div className="justify-center w-full overflow-hidden border rounded-lg">
+        {examples.map(({ type, src }) => (
+          <div
+            key={type}
+            className="grid w-full grid-cols-3 text-sm border-b last:border-b-0"
+          >
+            <div className="flex items-center w-full p-4 font-bold min-h-12">
+              {type}
+            </div>
+            <div className="flex items-center col-span-2 p-4 border-l">
+              <code className="text-sm whitespace-pre-wrap">{src}</code>
+            </div>
           </div>
-        </div>
-
-        <div className="flex justify-center text-xs text-center">
-          <p>
-            Powered by{" "}
-            <Link
-              href="https://supabase.com/"
-              target="_blank"
-              className="font-bold"
-            >
-              Supabase
-            </Link>
-          </p>
-        </div>
+        ))}
       </div>
     </div>
   );
