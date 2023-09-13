@@ -27,9 +27,9 @@ export default async function Index() {
       {/* nav部分 Home ,Advertisement, Dark mode,Language, Login */}
       {/* ナビ部分の高さを決めている、ボーダーラインボトムを描いている ボーダー色は現在の文字色
       ナビ部分とメイン部分の分離箇所 */}
-      <nav className="flex justify-center w-full h-16 border-b border-b-foreground/10">
+      <nav className="flex justify-center w-full h-16 border-b border-current">
         {/* ナビ部分 上下中央に揃えている 横に均等にならべている 幅いっぱいに使っている */}
-        <div className="flex items-center justify-between w-full max-w-4xl p-3 text-sm text-foreground">
+        <div className="flex items-center justify-between w-full">
           VNS.BLUE
           <div />
           Dark mode
@@ -54,22 +54,6 @@ export default async function Index() {
           </div>
         </div>
       </nav>
-
-      <div className="justify-center w-full overflow-hidden border rounded-lg">
-        {examples.map(({ type, src }) => (
-          <div
-            key={type}
-            className="grid w-full grid-cols-3 text-sm border-b last:border-b-0"
-          >
-            <div className="flex items-center w-full p-4 font-bold min-h-12">
-              {type}
-            </div>
-            <div className="flex items-center col-span-2 p-4 border-l">
-              <code className="text-sm whitespace-pre-wrap">{src}</code>
-            </div>
-          </div>
-        ))}
-      </div>
     </div>
   );
 }
