@@ -1,15 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import i18next from "i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
+import resourcesToBackend from "i18next-resources-to-backend";
+import { useEffect, useState } from "react";
+import { useCookies } from "react-cookie";
 import {
   initReactI18next,
   useTranslation as useTranslationOrg,
 } from "react-i18next";
-import { useCookies } from "react-cookie";
-import resourcesToBackend from "i18next-resources-to-backend";
+
 import { getOptions, languages, cookieName } from "./settings";
-import LanguageDetector from "i18next-browser-languagedetector";
 
 const runsOnServerSide = typeof window === "undefined";
 
@@ -19,8 +20,8 @@ i18next
   .use(LanguageDetector)
   .use(
     resourcesToBackend((language, namespace) =>
-      import(`./locales/${language}/${namespace}.json`)
-    )
+      import(`./locales/${language}/${namespace}.json`),
+    ),
   )
   .init({
     ...getOptions(),

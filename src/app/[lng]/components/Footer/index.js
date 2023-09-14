@@ -1,10 +1,11 @@
-import Link from "next/link"
-import { languages } from "../../../i18n/settings"
-import { useTranslation } from "../../../i18n"
-import { Trans } from "react-i18next/TransWithoutContext"
+import Link from "next/link";
+import { Trans } from "react-i18next/TransWithoutContext";
+
+import { useTranslation } from "../../../i18n";
+import { languages } from "../../../i18n/settings";
 
 export const Footer = async ({ lng }) => {
-  const { t } = await useTranslation(lng, "footer")
+  const { t } = await useTranslation(lng, "footer");
   return (
     <footer style={{ marginTop: 50 }}>
       <Trans i18nKey="languageSwitcher" t={t}>
@@ -18,8 +19,8 @@ export const Footer = async ({ lng }) => {
               {index > 0 && "or "}
               <Link href={`/${l}`}>{l}</Link>
             </span>
-          )
+          );
         })}
     </footer>
-  )
-}
+  );
+};

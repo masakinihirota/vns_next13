@@ -1,8 +1,10 @@
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import Link from "next/link";
+
 import LogoutButton from "../components/LogoutButton";
 
+// 動的レンダリングを強制します。
 export const dynamic = "force-dynamic";
 
 export default async function Index() {

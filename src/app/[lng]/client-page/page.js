@@ -1,13 +1,14 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { useTranslation } from "../../i18n/client"
-import { Footer } from "../components/Footer/client"
-import { useState } from "react"
+import Link from "next/link";
+import { useState } from "react";
+
+import { useTranslation } from "../../i18n/client";
+import { Footer } from "../components/Footer/client";
 
 export default function Page({ params: { lng } }) {
-  const { t } = useTranslation(lng, "client-page")
-  const [counter, setCounter] = useState(0)
+  const { t } = useTranslation(lng, "client-page");
+  const [counter, setCounter] = useState(0);
   return (
     <>
       <h1>{t("title")}</h1>
@@ -21,5 +22,5 @@ export default function Page({ params: { lng } }) {
       </Link>
       <Footer lng={lng} />
     </>
-  )
+  );
 }
