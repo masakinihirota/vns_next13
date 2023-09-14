@@ -9,9 +9,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    // darkモードの切り替えを行っている
-    // dark or light
-    <html lang="en" className="dark">
+    <html lang="en">
       <head />
       <body suppressHydrationWarning={true}>
         {/* ↓ログイン画面に影響を与えている */}

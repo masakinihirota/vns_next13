@@ -3,6 +3,8 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import Link from "next/link";
 
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+
 import LogoutButton from "../components/LogoutButton";
 
 // 動的レンダリングを強制します。
@@ -26,7 +28,7 @@ export default async function Index() {
         <div className="flex items-center justify-between w-full">
           VNS.BLUE
           <div />
-          Dark mode
+          <ThemeSwitcher />
           <div />
           Language
           <div />
