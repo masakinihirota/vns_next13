@@ -1,6 +1,9 @@
+import { Button } from "@nextui-org/button";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import Link from "next/link";
+
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 
 import LogoutButton from "../components/LogoutButton";
 
@@ -25,7 +28,7 @@ export default async function Index() {
         <div className="flex items-center justify-between w-full">
           VNS.BLUE
           <div />
-          Dark mode
+          <ThemeSwitcher />
           <div />
           Language
           <div />
@@ -60,7 +63,11 @@ export default async function Index() {
         <Link href="/de">ドイツ語</Link>
         <Link href="/ja">日本語</Link>
       </main>
+      <h1 className="text-3xl font-bold underline">Hello world!</h1>
       <div />
+      <div>
+        <Button>Click me</Button>
+      </div>
       <footer className="flex items-center justify-center h-16">
         VNS.BLUE 2023
       </footer>
