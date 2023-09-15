@@ -18,7 +18,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head />
       <body suppressHydrationWarning={true}>
         <Providers>
           {/* ↓ログイン画面に影響を与えている */}
