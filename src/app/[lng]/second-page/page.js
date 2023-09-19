@@ -1,10 +1,10 @@
-import Link from "next/link";
+import Link from "next/link"
 
-import { useTranslation } from "../../i18n";
-import { Footer } from "../components/Footer";
+import { useTranslation } from "../../i18n"
+import { Footer } from "../components/Footer"
 
 export default async function Page({ params: { lng } }) {
-  const { t } = await useTranslation(lng, "second-page");
+  const { t } = await useTranslation(lng, "second-page")
 
   return (
     <>
@@ -19,5 +19,5 @@ export default async function Page({ params: { lng } }) {
       <br />
       <Footer lng={lng} />
     </>
-  );
+  )
 }

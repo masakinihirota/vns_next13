@@ -1,20 +1,20 @@
-import "@/styles/globals.css";
-import { Metadata } from "next";
-import React from "react";
+import "@/styles/globals.css"
+import { Metadata } from "next"
+import React from "react"
 
-import { Providers } from "./providers";
+import { Providers } from "./providers"
 
 // Next.jsではmetadataを使ってメタデータを設定します。
 export const metadata: Metadata = {
   title: "VNS.BLUE",
   description: "VNS.BLUE",
-  keywords: "VNS.BLUE, オアシス宣言",
-};
+  keywords: "VNS.BLUE, オアシス宣言"
+}
 
 export default function RootLayout({
-  children,
+  children
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en">
@@ -27,5 +27,5 @@ export default function RootLayout({
         </Providers>
       </body>
     </html>
-  );
+  )
 }
