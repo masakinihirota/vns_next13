@@ -1,21 +1,21 @@
-import { Button } from "@nextui-org/button";
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
-import Link from "next/link";
+import { Button } from "@nextui-org/button"
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
+import { cookies } from "next/headers"
+import Link from "next/link"
 
-import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher"
 
-import LogoutButton from "../components/LogoutButton";
+import LogoutButton from "../components/LogoutButton"
 
 // 動的レンダリングを強制します。
-export const dynamic = "force-dynamic";
+export const dynamic = "force-dynamic"
 
 export default async function Index() {
-  const supabase = createServerComponentClient({ cookies });
+  const supabase = createServerComponentClient({ cookies })
 
   const {
-    data: { user },
-  } = await supabase.auth.getUser();
+    data: { user }
+  } = await supabase.auth.getUser()
 
   return (
     // 全体を縦にならべている、幅いっぱいに並べている
@@ -72,5 +72,5 @@ export default async function Index() {
         VNS.BLUE 2023
       </footer>
     </div>
-  );
+  )
 }

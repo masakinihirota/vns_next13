@@ -32,3 +32,6 @@ package-lock.json
 **/*.jpeg
 **/*.gif
 **/*.ico
+
+node_modules
+public

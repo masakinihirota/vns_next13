@@ -1,6 +1,6 @@
-import Link from "next/link";
+import Link from "next/link"
 
-import Messages from "./messages";
+import Messages from "./messages"
 
 export default function Login() {
   return (
@@ -62,5 +62,5 @@ export default function Login() {
         <Messages />
       </form>
     </div>
-  );
+  )
 }
