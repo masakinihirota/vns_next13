@@ -1,11 +1,10 @@
 import { createMiddlewareClient } from "@supabase/auth-helpers-nextjs";
+import acceptLanguage from "accept-language";
 import { NextResponse } from "next/server";
 
-import type { NextRequest } from "next/server";
-
-import acceptLanguage from "accept-language";
-
 import { fallbackLng, languages, cookieName } from "@/app/i18n/settings";
+
+import type { NextRequest } from "next/server";
 
 acceptLanguage.languages(languages);
 

@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint --ext .ts,.js,.tsx . ",
     "format": "prettier --write ."
   },
   "dependencies": {
@@ -37,6 +37,7 @@
     "@types/react": "18.2.12",
     "@types/react-dom": "18.2.5",
     "@types/tailwindcss": "^3.1.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
     "encoding": "^0.1.13",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-unused-imports": "^3.0.0",
