@@ -6,8 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --ext .ts,.js,.tsx . ",
-    "format": "prettier --write ."
+    "lint": "eslint --ext .ts,.js,.tsx . && prettier --check \"./**/*.{ts,js,tsx}\"",
+    "lint:fix": "eslint --ext .ts,.js,.tsx . --fix && prettier --write \"./**/*.{ts,js,tsx,scss}\"",
+    "lint:style": "stylelint **/*.{css,scss}",
+    "format": "prettier --write './**/*.{js,ts,tsx}'"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
@@ -42,6 +44,10 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-unused-imports": "^3.0.0",
     "husky": "^8.0.0",
+    "lint-staged": "^14.0.1",
     "prettier": "^3.0.3"
+  },
+  "lint-staged": {
+    "*.{tsx,ts}": "npm run lint"
   }
 }
