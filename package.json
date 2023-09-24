@@ -8,13 +8,16 @@
     "start": "next start",
     "lint": "eslint --ext .ts,.js,.tsx . && prettier --check \"./**/*.{ts,js,tsx}\"",
     "lint:fix": "eslint --ext .ts,.js,.tsx . --fix && prettier --write \"./**/*.{ts,js,tsx,scss}\"",
-    "format": "prettier --write './**/*.{js,ts,tsx}'"
+    "format": "prettier --write './**/*.{js,ts,tsx}'",
+    "test": "vitest",
+    "test:ui": "vitest --ui"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "@nextui-org/react": "^2.1.12",
     "@supabase/auth-helpers-nextjs": "latest",
     "@supabase/supabase-js": "latest",
+    "@vitejs/plugin-react": "^4.0.4",
     "accept-language": "^3.0.18",
     "autoprefixer": "10.4.14",
     "eslint": "^8.49.0",
@@ -30,21 +33,33 @@
     "react-cookie": "^6.1.1",
     "react-dom": "^18.2.0",
     "react-i18next": "^13.2.2",
+    "server-only": "^0.0.1",
     "tailwindcss": "3.3.2",
     "typescript": "5.1.3"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.1.3",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.5.1",
+    "@types/eslint": "^8.44.3",
+    "@types/eslint-config-prettier": "^6.11.1",
+    "@types/jsdom": "^21.1.3",
+    "@types/lint-staged": "^13.2.0",
     "@types/node": "20.3.1",
     "@types/react": "18.2.12",
     "@types/react-dom": "18.2.5",
     "@types/tailwindcss": "^3.1.0",
     "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@vitest/ui": "^0.34.5",
     "encoding": "^0.1.13",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-unused-imports": "^3.0.0",
     "husky": "^8.0.0",
+    "jsdom": "^22.1.0",
     "lint-staged": "^14.0.1",
-    "prettier": "^3.0.3"
+    "prettier": "^3.0.3",
+    "typesync": "^0.11.1",
+    "vitest": "^0.34.5"
   },
   "lint-staged": {
     "*.{tsx,ts}": "npm run lint"
