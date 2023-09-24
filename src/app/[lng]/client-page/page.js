@@ -3,6 +3,8 @@
 import Link from "next/link"
 import { useState } from "react"
 
+import Counter from "@/components/component"
+
 import { useTranslation } from "../../i18n/client"
 import { Footer } from "../components/Footer/client"
 
@@ -20,6 +22,8 @@ export default function Page({ params: { lng } }) {
       <Link href={`/${lng}`}>
         <button type="button">{t("back-to-home")}</button>
       </Link>
+      <br />
+      <Counter />
       <Footer lng={lng} />
     </>
   )
