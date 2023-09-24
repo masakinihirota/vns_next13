@@ -53,9 +53,7 @@ export default async function Index() {
 
       {/* メイン部分 */}
       <main className="flex flex-col w-full max-w-4xl p-3 text-xl text-foreground">
-        <h1>
-          Welcome to <a href="https://www.vns.blue/">VNS.BLUE</a>
-        </h1>
+        <h1>Welcome to VNS.BLUE</h1>
         <br />
         <Link href="./examples/client-component">Client Component Example</Link>
         <Link href="./examples/route-handler">Route Handler Example</Link>
