@@ -17,5 +17,6 @@ coverage
 
 package-lock.json
 
-*.stories.ts
-*.stories.tsx
+# Storybook
+# *.stories.ts
+# *.stories.tsx

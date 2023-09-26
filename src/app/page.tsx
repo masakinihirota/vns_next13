@@ -3,6 +3,8 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
 import { cookies } from "next/headers"
 import Link from "next/link"
 
+import ClientComponent from "@/__tests__/client/page"
+import Counter from "@/__tests__/components/component"
 import { ThemeSwitcher } from "@/components/ThemeSwitcher"
 
 import LogoutButton from "../components/LogoutButton"
@@ -53,9 +55,7 @@ export default async function Index() {
 
       {/* メイン部分 */}
       <main className="flex flex-col w-full max-w-4xl p-3 text-xl text-foreground">
-        <h1>
-          Welcome to <a href="https://www.vns.blue/">VNS.BLUE</a>
-        </h1>
+        <h1>Welcome to VNS.BLUE</h1>
         <br />
         <Link href="./examples/client-component">Client Component Example</Link>
         <Link href="./examples/route-handler">Route Handler Example</Link>
@@ -67,11 +67,15 @@ export default async function Index() {
         <Link href="/de">ドイツ語</Link>
         <Link href="/ja">日本語</Link>
       </main>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <div />
+      <h1 className="text-3xl font-bold underline">VNS.BLUE</h1>
+      {/* テストとストーリーファイル 4種類 */}
+      <ClientComponent />
+
       <div>
+        {/* 外部製のコンポーネントの導入 */}
         <Button>Click me</Button>
       </div>
+      <Counter />
 
       <footer className="flex items-center justify-center h-16">
         VNS.BLUE 2023
