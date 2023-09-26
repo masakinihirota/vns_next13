@@ -1,9 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-turbo lint:fix build
-
-# npm run lint:fix
-# npx lint-staged
-# npm run build
-
+turbo build lint:fix
