@@ -5,6 +5,7 @@ import Link from "next/link"
 
 import ClientComponent from "@/__tests__/client/page"
 import Counter from "@/__tests__/components/component"
+import Page from "@/__tests__/rsc/page"
 import { ThemeSwitcher } from "@/components/ThemeSwitcher"
 
 import LogoutButton from "../components/LogoutButton"
@@ -18,6 +19,9 @@ export default async function Index() {
   const {
     data: { user }
   } = await supabase.auth.getUser()
+
+  // 3番目のテスト用のblogId
+  const blogId = "123"
 
   return (
     // 全体を縦にならべている、幅いっぱいに並べている
@@ -70,12 +74,14 @@ export default async function Index() {
       <h1 className="text-3xl font-bold underline">VNS.BLUE</h1>
       {/* テストとストーリーファイル 4種類 */}
       <ClientComponent />
+      <Counter />
+      <Link href={`/blog/${blogId}`}>Blogページ</Link>
+      <Page />
 
       <div>
         {/* 外部製のコンポーネントの導入 */}
         <Button>Click me</Button>
       </div>
-      <Counter />
 
       <footer className="flex items-center justify-center h-16">
         VNS.BLUE 2023
