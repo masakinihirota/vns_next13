@@ -17,8 +17,8 @@ out/
 package-lock.json
 
 # Storybook
-*.stories.ts
-*.stories.tsx
+# *.stories.ts
+# *.stories.tsx
 
 # CSSファイル
 *.css
@@ -36,4 +36,3 @@ package-lock.json
 node_modules
 public
 
-stories/
