@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { useState } from "react"
 
-import Counter from "@/components/component"
+import Counter from "@/__tests__/components/component"
 
 import { useTranslation } from "../../i18n/client"
 import { Footer } from "../components/Footer/client"
