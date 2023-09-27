@@ -1,0 +1,27 @@
+import type { Meta, StoryObj } from "@storybook/react";
+
+// 作ったコンポーネントをインポートします。
+import {{pascalCase name}}, { {{pascalCase name}}Props } from './{{name}}';
+
+type T = typeof {{pascalCase name}}
+
+const meta = {
+  // Storybookのダッシュボードのサイドバーに表示されるタイトルを定義します。
+  title: "{{componentType}}/{{pascalCase name}}",
+  component: {{pascalCase name}},
+  parameters: {},
+  argTypes: {
+  },
+} satisfies Meta<T>;
+
+export default meta;
+type Story = StoryObj<T>;
+
+// Storybookのダッシュボードのサイドバーに表示されるコンポーネントの色々なパーターンを定義します。
+export const {{pascalCase name}}First: Story = {};
+export const {{pascalCase name}}Second: Story = {};
+export const {{pascalCase name}}Third: Story = {
+    args : {
+  },
+};
+
