@@ -3,7 +3,7 @@ import { dir } from "i18next"
 import { Metadata } from "next"
 import React from "react"
 
-import { ModeToggle } from "@/components/DarkClient"
+import { DarkToggle } from "@/components/DarkToggle"
 import { ThemeProvider } from "@/components/theme-provider"
 
 import { languages } from "./i18n/settings"
@@ -37,7 +37,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ModeToggle />
+          <DarkToggle />
           {children}
         </ThemeProvider>
         {/* ↓ログイン画面に影響を与えている */}
