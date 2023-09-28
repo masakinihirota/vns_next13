@@ -3,10 +3,11 @@ import { dir } from "i18next"
 import { Metadata } from "next"
 import React from "react"
 
-import TopNav from "@/components/nav/TopNav"
+import { ModeToggle } from "@/components/DarkClient"
+import { ThemeProvider } from "@/components/theme-provider"
 
 import { languages } from "./i18n/settings"
-import { Providers } from "./providers"
+// import { Providers } from "./providers"
 
 export async function generateStaticParams() {
   return languages.map((lng) => ({ lng }))
@@ -27,15 +28,22 @@ export default function RootLayout({
   params: { lng: string }
 }) {
   return (
-    <html lang={lng} dir={dir(lng)}>
-      <body suppressHydrationWarning={true}>
-        <TopNav />
-        <Providers>
-          {/* ↓ログイン画面に影響を与えている */}
-          <main className="flex flex-col items-center min-h-screen bg-background">
-            {children}
-          </main>
-        </Providers>
+    <html lang={lng} dir={dir(lng)} suppressHydrationWarning>
+      <body>
+        {/* <TopNav /> */}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <ModeToggle />
+          {children}
+        </ThemeProvider>
+        {/* ↓ログイン画面に影響を与えている */}
+        {/* <main className="flex flex-col items-center min-h-screen bg-background">
+          {children}
+        </main> */}
       </body>
     </html>
   )

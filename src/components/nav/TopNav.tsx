@@ -1,7 +1,7 @@
 import Link from "next/link"
 import React from "react"
 
-import { ThemeSwitcher } from "../ThemeSwitcher"
+// import { ThemeSwitcher } from "../ThemeSwitcher"
 
 // Login用
 // import LogoutButton from "../LogoutButton"
@@ -24,7 +24,7 @@ export default async function TopNav() {
       <div className="flex items-center justify-between w-full">
         <Link href="/">VNS.BLUE</Link>
         <div />
-        <ThemeSwitcher />
+        {/* <ThemeSwitcher /> */}
         <div />
         Language
         <div />
