@@ -3,9 +3,12 @@ import Link from "next/link"
 import LeftMenu from "@/components/nav/LeftMenu"
 
 import { useTranslation } from "../i18n"
-
 export default async function Page({ params: { lng } }) {
-  // console.log("lng", lng);
+  console.log("lng", lng)
+
+  // アラビア語用
+  // const lang = dir(lng)
+  // console.log("dir", lang)
 
   const { t } = await useTranslation(lng)
   return (
@@ -13,7 +16,7 @@ export default async function Page({ params: { lng } }) {
       <div className="flex flex-col md:flex-row">
         <LeftMenu lng={lng} />
         <main className="flex flex-col w-full max-w-4xl p-3 text-xl text-foreground">
-          <Link href="/ja">日本語</Link>
+          {lng}
           <br />
           [lng]トップページ
           <br />
