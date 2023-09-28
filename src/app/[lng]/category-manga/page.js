@@ -12,6 +12,7 @@ export default function Page({ params: { lng } }) {
   return (
     <>
       <h1>{t("title")}</h1>
+      category-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-mangacategory-manga
       <p>{t("counter", { count: counter })}</p>
       <div>
         <button onClick={() => setCounter(Math.max(0, counter - 1))}>-</button>
