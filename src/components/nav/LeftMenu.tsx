@@ -3,7 +3,7 @@ import Link from "next/link"
 import React from "react"
 
 const LeftMenu = ({ lng }) => {
-  console.log("lng", lng)
+  // console.log("lng", lng)
 
   return (
     <aside className="flex flex-col w-64">
