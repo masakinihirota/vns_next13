@@ -3,7 +3,7 @@ import { dir } from "i18next"
 import { Metadata } from "next"
 import React from "react"
 
-import { DarkToggle } from "@/components/DarkToggle"
+import TopNav from "@/components/nav/TopNav"
 import { ThemeProvider } from "@/components/theme-provider"
 
 import { languages } from "./i18n/settings"
@@ -30,14 +30,13 @@ export default function RootLayout({
   return (
     <html lang={lng} dir={dir(lng)} suppressHydrationWarning>
       <body>
-        {/* <TopNav /> */}
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <DarkToggle />
+          <TopNav />
           {children}
         </ThemeProvider>
         {/* ↓ログイン画面に影響を与えている */}
