@@ -2,6 +2,8 @@ import "@/styles/globals.css"
 import { Metadata } from "next"
 import React from "react"
 
+import TopNav from "@/components/nav/TopNav"
+
 import { Providers } from "./providers"
 
 // Next.jsではmetadataを使ってメタデータを設定します。
@@ -19,6 +21,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning={true}>
+        <TopNav />
+
         <Providers>
           {/* ↓ログイン画面に影響を与えている */}
           <main className="flex flex-col items-center min-h-screen bg-background">
