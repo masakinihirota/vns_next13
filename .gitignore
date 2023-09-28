@@ -40,4 +40,6 @@ next-env.d.ts
 # turborepo
 .turbo
 
+/__dust
+
 pnpm-lock.yaml
