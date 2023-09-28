@@ -36,13 +36,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <TopNav />
-          {children}
+          {/* ↓ログイン画面に影響を与えている */}
+          <main className="flex flex-col items-center min-h-screen bg-background">
+            <TopNav />
+            {children}
+          </main>
         </ThemeProvider>
-        {/* ↓ログイン画面に影響を与えている */}
-        {/* <main className="flex flex-col items-center min-h-screen bg-background">
-          {children}
-        </main> */}
       </body>
     </html>
   )
