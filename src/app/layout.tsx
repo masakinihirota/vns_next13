@@ -3,6 +3,7 @@ import { dir } from "i18next"
 import { Metadata } from "next"
 import React from "react"
 
+import LeftMenu from "@/components/nav/LeftMenu"
 import TopNav from "@/components/nav/TopNav"
 import { ThemeProvider } from "@/components/theme-provider"
 
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang={lng} dir={dir(lng)} suppressHydrationWarning>
       <body>
+        {/* サイト全体にshadcn/cnの影響を与える */}
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -39,7 +41,10 @@ export default function RootLayout({
           {/* ↓ログイン画面に影響を与えている */}
           <main className="flex flex-col items-center min-h-screen bg-background">
             <TopNav />
-            {children}
+            <div className="flex flex-grow w-full">
+              <LeftMenu lng={lng} />
+              <div className="w-full">{children}</div>
+            </div>
           </main>
         </ThemeProvider>
       </body>

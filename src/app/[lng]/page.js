@@ -1,7 +1,5 @@
 import Link from "next/link"
 
-import LeftMenu from "@/components/nav/LeftMenu"
-
 import { useTranslation } from "../i18n"
 export default async function Page({ params: { lng } }) {
   // console.log("lng", lng)
@@ -13,7 +11,6 @@ export default async function Page({ params: { lng } }) {
   const { t } = await useTranslation(lng)
   return (
     <div className="flex flex-row">
-      <LeftMenu lng={lng} />
       <main className="flex flex-col w-full max-w-4xl p-3 text-xl text-foreground">
         {lng}
         <br />
@@ -30,8 +27,8 @@ export default async function Page({ params: { lng } }) {
             <br />
           </div>
           <div className="flex flex-col w-1/2">
-            メインコンテンツ メインコンテンツ メインコンテンツ メインコンテンツ
-            メインコンテンツ メインコンテンツ
+            1メインコンテンツ メインコンテンツ メインコンテンツ メインコンテンツ
+            メインコンテンツ メインコンテンツ1
             {/* <h1>Hi there!</h1> */}
           </div>
         </div>

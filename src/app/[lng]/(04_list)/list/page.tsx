@@ -1,3 +1,5 @@
+import Footer from "@/components/nav/Footer"
+
 // 動的レンダリングを強制します。
 export const dynamic = "force-dynamic"
 
@@ -8,9 +10,7 @@ export default async function Index() {
       <h1>(04_list)\list</h1>
       <br />
 
-      <footer className="flex items-center justify-center h-16">
-        VNS.BLUE 2023
-      </footer>
+      <Footer />
     </div>
   )
 }
