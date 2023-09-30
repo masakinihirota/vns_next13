@@ -30,9 +30,7 @@ export default async function TopNav() {
         Language
         <div />
         Advertisement
-        {/* ログインは各種機能ができるまで非表示 */}
         <div>
-          No-Account
           {user ? (
             <div className="flex items-center gap-4">
               Welcome to VNS.BLUE, {user.email}!
