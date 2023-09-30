@@ -29,7 +29,6 @@ export default async function Page({ params: { lng } }) {
           <div className="flex flex-col w-1/2">
             1メインコンテンツ メインコンテンツ メインコンテンツ メインコンテンツ
             メインコンテンツ メインコンテンツ1
-            {/* <h1>Hi there!</h1> */}
           </div>
         </div>
       </main>

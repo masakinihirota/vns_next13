@@ -23,7 +23,6 @@ export default async function TopNav() {
         <Link href="/">VNS.BLUE</Link>
         <div />
         <DarkToggle />
-        {/* <ThemeSwitcher /> */}
         <div />
         Language
         <div />
