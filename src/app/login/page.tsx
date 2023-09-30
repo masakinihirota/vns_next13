@@ -22,13 +22,13 @@ export default function Login() {
           className="w-4 h-4 mr-2 transition-transform group-hover:-translate-x-1"
         >
           <polyline points="15 18 9 12 15 6" />
-        </svg>{" "}
+        </svg>
         Back
       </Link>
 
       <form
         className="flex flex-col justify-center flex-1 w-full gap-2 text-foreground"
-        action="/auth/sign-in"
+        action="/auth_email/sign-in"
         method="post"
       >
         <label className="text-md" htmlFor="email">
@@ -54,7 +54,7 @@ export default function Login() {
           Sign In
         </button>
         <button
-          formAction="/auth/sign-up"
+          formAction="/auth_email/sign-up"
           className="px-4 py-2 mb-2 text-black border border-gray-700 rounded"
         >
           Sign Up
