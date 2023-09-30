@@ -1,6 +1,31 @@
 # VNS
 
 # 色
+？？？
+
+基本コロケーション
+同じコンポーネント、テストファイル、ストーリーファイルは同じ場所に置く。
+共通部分はrootの共通部部分に置く
+
+
+
+src/app 本体
+src/components 共通コンポーネント
+
+
+src/lib shadcn/ui
+src/styles 共通スタイル
+src/types 共通の型
+
+src/__tests__ お手本テスト
+stories お手本storybook
+
+supabase DB
+templates plop
+dust 不要になったファイル
+
+
+
 
 
 ----------------------------------------
