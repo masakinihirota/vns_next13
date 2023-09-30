@@ -1,21 +1,19 @@
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
+import { cookies } from "next/headers"
 import Link from "next/link"
 import React from "react"
 
 import { DarkToggle } from "@/components/DarkToggle"
 
-// import { ThemeSwitcher } from "../ThemeSwitcher"
-
 // Login用
-// import LogoutButton from "../LogoutButton"
-// import { createServerComponentClient } from "@supabase/auth-helpers-nextjs"
-// import { cookies } from "next/headers"
+import LogoutButton from "../LogoutButton"
 
 export default async function TopNav() {
-  // const supabase = createServerComponentClient({ cookies })
+  const supabase = createServerComponentClient({ cookies })
 
-  // const {
-  //   data: { user }
-  // } = await supabase.auth.getUser()
+  const {
+    data: { user }
+  } = await supabase.auth.getUser()
 
   return (
     <nav className="flex justify-center w-full h-16 border-b border-current">
@@ -35,7 +33,7 @@ export default async function TopNav() {
         {/* ログインは各種機能ができるまで非表示 */}
         <div>
           No-Account
-          {/* {user ? (
+          {user ? (
             <div className="flex items-center gap-4">
               Welcome to VNS.BLUE, {user.email}!
               <LogoutButton />
@@ -47,7 +45,7 @@ export default async function TopNav() {
             >
               Login
             </Link>
-          )} */}
+          )}
         </div>
       </div>
     </nav>

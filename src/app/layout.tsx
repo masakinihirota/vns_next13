@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   keywords: "VNS.BLUE, オアシス宣言"
 }
 
+// 動的レンダリングを強制します。
+export const dynamic = "force-dynamic"
+
 export default function RootLayout({
   children,
   params: { lng = "en" }
