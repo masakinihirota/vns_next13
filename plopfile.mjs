@@ -8,38 +8,48 @@ export default function (
   plop.setGenerator("component", {
     description: "Create a new component",
     prompts: [
-      {
-        type: "input",
-        name: "path",
-        message: "どこにコンポーネントを置きますか？"
-      },
+      // {
+      //   type: "input",
+      //   name: "path",
+      //   message: "どこにコンポーネントを置きますか？"
+      // },
       {
         type: "input",
         name: "name",
         message: "コンポーネントの名前を入力してください"
-      },
-      {
-        type: "list",
-        name: "componentType",
-        message: "Component type",
-        // サーバーコンポーネント、クライアントコンポーネント
-        choices: ["server", "client"]
       }
+      // {
+      //   type: "list",
+      //   name: "componentType",
+      //   message: "Component type",
+      //   // サーバーコンポーネント、クライアントコンポーネント
+      //   choices: ["server", "client"]
+      // }
     ],
     actions: [
+      // {
+      //   type: "add",
+      //   path: "./{{componentType}}/{{path}}/page.tsx",
+      //   templateFile: "templates/component/page.tsx.hbs"
+      // },
       {
         type: "add",
-        path: "src/components/{{componentType}}/{{path}}/{{pascalCase name}}/{{name}}.tsx",
+        path: "src/components/{{name}}/page.tsx",
+        templateFile: "templates/component/page.tsx.hbs"
+      },
+      {
+        type: "add",
+        path: "src/components/{{name}}/_{{name}}/{{pascalCase name}}.tsx",
         templateFile: "templates/component/component.tsx.hbs"
       },
       {
         type: "add",
-        path: "src/components/{{componentType}}/{{path}}/{{pascalCase name}}/{{name}}.test.tsx",
+        path: "src/components/{{name}}/_{{name}}/{{pascalCase name}}.test.tsx",
         templateFile: "templates/component/component.test.tsx.hbs"
       },
       {
         type: "add",
-        path: "src/components/{{componentType}}/{{path}}/{{pascalCase name}}/{{name}}.stories.tsx",
+        path: "src/components/{{name}}/_{{name}}/{{pascalCase name}}.stories.tsx",
         templateFile: "templates/component/component.stories.tsx.hbs"
       }
     ]
