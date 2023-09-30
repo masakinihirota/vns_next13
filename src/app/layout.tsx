@@ -3,9 +3,9 @@ import { dir } from "i18next"
 import { Metadata } from "next"
 import React from "react"
 
+import { ThemeProvider } from "@/components/client/theme-provider"
 import LeftMenu from "@/components/nav/LeftMenu"
 import TopNav from "@/components/nav/TopNav"
-import { ThemeProvider } from "@/components/theme-provider"
 
 import { languages } from "./i18n/settings"
 // import { Providers } from "./providers"

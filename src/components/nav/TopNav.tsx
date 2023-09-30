@@ -3,10 +3,10 @@ import { cookies } from "next/headers"
 import Link from "next/link"
 import React from "react"
 
-import { DarkToggle } from "@/components/DarkToggle"
+import { DarkToggle } from "@/components/client/DarkToggle"
 
 // Login用
-import LogoutButton from "../LogoutButton"
+import LogoutButton from "../auth/LogoutButton"
 
 export default async function TopNav() {
   const supabase = createServerComponentClient({ cookies })
