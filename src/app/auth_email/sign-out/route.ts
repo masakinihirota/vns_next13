@@ -10,8 +10,10 @@ export async function POST(request: Request) {
 
   await supabase.auth.signOut()
 
-  return NextResponse.redirect(`${requestUrl.origin}/login`, {
+  // ログアウト後のリダイレクトページを指定
+  return NextResponse.redirect(`${requestUrl.origin}/`, {
     // a 301 status is required to redirect from a POST to a GET route
+    // HTTPステータスコード301は、「Moved Permanently（恒久的に移動した）」を意味し、リクエストされたリソースが恒久的に移動したことを示します。
     status: 301
   })
 }

@@ -8,7 +8,6 @@ export default async function Page({ params: { lng } }) {
 
   return (
     <>
-      {/* <h1>Hi from second page!</h1> */}
       <h1>{t("title")}</h1>
       <Link href={`/${lng}`}>
         {/* back */}
