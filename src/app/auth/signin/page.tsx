@@ -3,7 +3,6 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
 import { useEffect } from "react"
-// import { Form, useForm } from "react-hook-form"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 
@@ -75,10 +74,10 @@ export default function SignIn() {
     <div>
       <div className="">
         <h2 className="">Sign in</h2>
-        <p className="">Hi, Welcome back src\app\auth\signin\page.tsx</p>
+        <p className="">Hi, Welcome back</p>
         <br />
 
-        {/* メール */}
+        {/* Mail */}
         <section className="">
           <div className="">
             <p className="">Login</p>
@@ -108,19 +107,11 @@ export default function SignIn() {
             </form>
           </Form>
           <Separator />
-          {/* <Button
-            variant="secondary"
-            size="sm"
-            className="space-x-4"
-            onClick={handleGithubLogin}
-          >
-            <RxGithubLogo size={20} />
-            <p>Sign in with Github</p>
-          </Button> */}
           <Toaster />
         </section>
         <br />
         <Separator />
+
         {/* OAuth */}
         <div className="">
           <a className="" href="/auth/github">
@@ -202,7 +193,7 @@ export default function SignIn() {
             </svg>
             Sign in with Google
           </a>
-          <a className="" href="/auth/azure">
+          {/* <a className="" href="/auth/azure">
             <svg
               // Azure
               xmlns="http://www.w3.org/2000/svg"
@@ -267,7 +258,7 @@ export default function SignIn() {
               />
             </svg>
             Sign in with Azure
-          </a>
+          </a> */}
         </div>
         <div />
       </div>
