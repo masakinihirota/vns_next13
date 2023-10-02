@@ -1,3 +1,9 @@
+// メールのフォームをimport
+import MailForm from "./mail-form"
+
+// エラーが出て使えなかった
+// import OAuthForm from "./oauth-form"
+
 export default function SignIn() {
   return (
     <div className="w-11/12 p-12 px-6 py-10 rounded-lg sm:w-8/12 md:w-6/12 lg:w-5/12 2xl:w-3/12 sm:px-10 sm:py-6">
@@ -5,6 +11,14 @@ export default function SignIn() {
       <p className="mb-4 font-medium">
         Hi, Welcome back app\auth\signin\page.tsx
       </p>
+      --------------------------------------------------------
+      <br />
+      {/* ↓エラーが出て使えなかった */}
+      {/* <OAuthForm /> */}
+      {/* メール担当コンポーネント */}
+      <MailForm />
+      <br />
+      --------------------------------------------------------
       <div className="space-y-2">
         <a
           className="w-full gap-2 normal-case border-gray-200 btn btn-outline hover:bg-transparent hover:text-gray-500 no-animation"
