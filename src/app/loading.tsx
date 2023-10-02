@@ -3,7 +3,7 @@
 //   return <LoadingSkeleton />
 // }
 
-// danilowoz/react-content-loader: ⚪ SVG-Powered component to easily create skeleton loadings.
+// react-content-loader: ⚪ SVG-Powered component to easily create skeleton loadings.
 // https://github.com/danilowoz/react-content-loader
 // React Skeleton - Create Content Loader
 // https://skeletonreact.com/
