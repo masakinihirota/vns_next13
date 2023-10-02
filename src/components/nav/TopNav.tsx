@@ -20,13 +20,20 @@ export default async function TopNav() {
       ナビ部分とメイン部分の分離箇所 */}
       {/* ナビ部分 上下中央に揃えている 横に均等にならべている 幅いっぱいに使っている */}
       <div className="flex items-center justify-between w-full">
-        <Link href="/">VNS.BLUE</Link>
+        <Link className="hover:bg-gray-400" href="/">
+          VNS.BLUE
+        </Link>
         <div />
         <DarkToggle />
         <div />
-        Language
+        <Link className="hover:bg-gray-400" href="/">
+          Language
+        </Link>
         <div />
-        Advertisement
+        <Link className="hover:bg-gray-400" href="/">
+          Advertisement
+        </Link>
+
         <div>
           {user ? (
             <div className="flex items-center gap-4">
@@ -34,12 +41,15 @@ export default async function TopNav() {
               <LogoutButton />
             </div>
           ) : (
-            <Link
-              href="/login"
-              className="px-4 py-2 no-underline rounded-md bg-btn-background hover:bg-btn-background-hover"
-            >
-              Login
+            <Link className="hover:bg-gray-400" href="/auth/signin">
+              signin
             </Link>
+            // <Link
+            //   href="/login"
+            //   className="px-4 py-2 no-underline rounded-md bg-btn-background hover:bg-btn-background-hover"
+            // >
+            //   Login
+            // </Link>
           )}
         </div>
       </div>
