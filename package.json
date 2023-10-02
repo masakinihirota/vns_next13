@@ -6,14 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --ext .ts,.js,.tsx . && prettier --check \"./**/*.{ts,js,tsx}\"",
-    "lint:fix": "eslint --ext .ts,.js,.tsx . --fix && prettier --write \"./**/*.{ts,js,tsx,scss}\"",
-    "format": "prettier --write './**/*.{js,ts,tsx}'",
-    "test": "vitest",
-    "test:ui": "vitest --ui",
+    "shadcn:add": "npx shadcn-ui@latest add",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "shadcn:add": "npx shadcn-ui@latest add"
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "typecheck": "tsc --noEmit",
+    "format": "eslint --ext .js,.ts,.tsx . && prettier --check '**/*.{ts,tsx,mdx}' --cache",
+    "format:fix": "eslint --ext .ts,.js,.tsx . --fix && prettier --write '**/*.{ts,tsx,mdx}' --cache"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
