@@ -16,6 +16,7 @@ export default async function Index() {
         <Link href="/de">ドイツ語</Link>
         <Link href="/ja">日本語</Link>
         <Link href="/github">GitHub</Link>
+        <Link href="/auth/signin">signin</Link>
       </div>
 
       <footer className="flex items-center justify-center h-16">
