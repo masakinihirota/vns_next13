@@ -5,6 +5,7 @@ import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
 import { useEffect } from "react"
 // import { Form, useForm } from "react-hook-form"
 import { useForm } from "react-hook-form"
+import { RxGithubLogo } from "react-icons/rx"
 import * as z from "zod"
 
 import { Button } from "@/components/ui/button"
@@ -23,7 +24,7 @@ import { useToast } from "@/components/ui/use-toast"
 
 const formSchema = z.object({
   email: z.string().email({
-    message: "Invalid"
+    message: "Invalid email address."
   })
 })
 
@@ -52,8 +53,22 @@ export default function SignIn() {
     }
 
     toast({
-      description: "🎉 Plz! Check your email for sign in link."
+      description: "🎉 Yay! Check your email for sign in link."
     })
+  }
+
+  async function handleGithubLogin() {
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: "github"
+    })
+
+    if (error) {
+      toast({
+        description: `warn! ${error?.message}`
+      })
+
+      return
+    }
   }
 
   useEffect(() => {
@@ -73,19 +88,31 @@ export default function SignIn() {
 
   return (
     <div>
-      <div className="">
-        <h2 className="">Sign in</h2>
-        <p className="">Hi, Welcome back src\app\auth\signin\page.tsx</p>
+      {/* OAuth */}
+      <div className="w-11/12 p-12 px-6 py-10 rounded-lg sm:w-8/12 md:w-6/12 lg:w-5/12 2xl:w-3/12 sm:px-10 sm:py-6">
+        <h2 className="mb-4 text-4xl font-semibold">Sign in</h2>
+        <p className="mb-4 font-medium">
+          Hi, Welcome back src\app\auth\signin\page.tsx
+        </p>
+        --------------------------------------------------------
         <br />
-
+        {/* ↓エラーが出て使えなかった */}
+        {/* <OAuthForm /> */}
+        {/* メール担当コンポーネント */}
+        {/* <MailForm /> */}
         {/* メール */}
-        <section className="">
-          <div className="">
-            <p className="">Login</p>
-            <p className="">Enter your email to receive a one-time password</p>
+        <section className="container flex flex-col justify-center h-screen max-w-md space-y-8">
+          <div className="flex flex-col space-y-4">
+            <p className="text-lg font-bold">Login</p>
+            <p className="text-sm text-muted-foreground">
+              Enter your email to receive a one-time password
+            </p>
           </div>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="w-full ">
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="w-full space-y-4"
+            >
               <FormField
                 control={form.control}
                 name="email"
@@ -108,7 +135,7 @@ export default function SignIn() {
             </form>
           </Form>
           <Separator />
-          {/* <Button
+          <Button
             variant="secondary"
             size="sm"
             className="space-x-4"
@@ -116,14 +143,17 @@ export default function SignIn() {
           >
             <RxGithubLogo size={20} />
             <p>Sign in with Github</p>
-          </Button> */}
+          </Button>
           <Toaster />
         </section>
         <br />
         <Separator />
-        {/* OAuth */}
-        <div className="">
-          <a className="" href="/auth/github">
+        {/* -------------------------------------------------------- */}
+        <div className="space-y-2">
+          <a
+            className="w-full gap-2 normal-case border-gray-200 btn btn-outline hover:bg-transparent hover:text-gray-500 no-animation"
+            href="/auth/github"
+          >
             <svg
               // GitHub
               width="24"
@@ -140,7 +170,10 @@ export default function SignIn() {
             </svg>
             Sign in with GitHub
           </a>
-          <a className="" href="/auth/slack">
+          <a
+            className="w-full gap-2 normal-case border-gray-200 btn btn-outline hover:bg-transparent hover:text-gray-500 no-animation"
+            href="/auth/slack"
+          >
             <svg
               // Slack
               xmlns="http://www.w3.org/2000/svg"
@@ -171,7 +204,10 @@ export default function SignIn() {
             </svg>
             Sign in with Slack
           </a>
-          <a className="" href="/auth/google">
+          <a
+            className="w-full gap-2 normal-case border-gray-200 btn btn-outline hover:bg-transparent hover:text-gray-500 no-animation"
+            href="/auth/google"
+          >
             <svg
               // Google
               xmlns="http://www.w3.org/2000/svg"
@@ -202,7 +238,10 @@ export default function SignIn() {
             </svg>
             Sign in with Google
           </a>
-          <a className="" href="/auth/azure">
+          <a
+            className="w-full gap-2 normal-case border-gray-200 btn btn-outline hover:bg-transparent hover:text-gray-500 no-animation"
+            href="/auth/azure"
+          >
             <svg
               // Azure
               xmlns="http://www.w3.org/2000/svg"
