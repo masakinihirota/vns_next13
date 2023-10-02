@@ -39,17 +39,17 @@ export default function (
       },
       {
         type: "add",
-        path: "src/components/{{name}}/_{{name}}/{{pascalCase name}}.tsx",
+        path: "src/components/{{name}}/_{{pascalCase name}}/{{pascalCase name}}.tsx",
         templateFile: "templates/component/component.tsx.hbs"
       },
       {
         type: "add",
-        path: "src/components/{{name}}/_{{name}}/{{pascalCase name}}.test.tsx",
+        path: "src/components/{{name}}/_{{pascalCase name}}/{{pascalCase name}}.test.tsx",
         templateFile: "templates/component/component.test.tsx.hbs"
       },
       {
         type: "add",
-        path: "src/components/{{name}}/_{{name}}/{{pascalCase name}}.stories.tsx",
+        path: "src/components/{{name}}/_{{pascalCase name}}/{{pascalCase name}}.stories.tsx",
         templateFile: "templates/component/component.stories.tsx.hbs"
       }
     ]

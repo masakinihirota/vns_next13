@@ -14,6 +14,8 @@ export const config = {
 }
 
 export async function middleware(req: NextRequest) {
+  // 認証 cookie
+  // 有効期限が切れたセッションを更新するために必要です。
   const res = NextResponse.next()
 
   // Create a Supabase client configured to use cookies
@@ -21,8 +23,11 @@ export async function middleware(req: NextRequest) {
 
   // Refresh session if expired - required for Server Components
   // https://supabase.com/docs/guides/auth/auth-helpers/nextjs#managing-session-with-middleware
+  // 有効期限が切れたセッションを更新します。
   await supabase.auth.getSession()
 
+  // i18n
+  // リクエストに含まれる言語情報を取得し、サポートされていない言語の場合はリダイレクトを行います。
   let lng
   if (req.cookies.has(cookieName))
     lng = acceptLanguage.get(req.cookies.get(cookieName)?.value)
