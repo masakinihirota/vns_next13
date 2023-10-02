@@ -10,14 +10,14 @@ export default async function Page({ params: { lng } }) {
 
   const { t } = await useTranslation(lng)
   return (
-    <div className="flex flex-row">
-      <main className="flex flex-col w-full max-w-4xl p-3 text-xl text-foreground">
+    <div className="">
+      <main className="">
         {lng}
         <br />
         [lng]トップページ
         <br />
-        <div className="flex flex-row">
-          <div className="flex flex-col w-1/2">
+        <div className="">
+          <div className="">
             <h1>{t("title")}</h1>
             <Link href={`/${lng}/second-page`}>{t("to-second-page")}</Link>
             <br />
@@ -26,7 +26,7 @@ export default async function Page({ params: { lng } }) {
             <Link href="/">トップページ</Link>
             <br />
           </div>
-          <div className="flex flex-col w-1/2">
+          <div className="">
             1メインコンテンツ メインコンテンツ メインコンテンツ メインコンテンツ
             メインコンテンツ メインコンテンツ1
           </div>

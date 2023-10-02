@@ -66,7 +66,7 @@ export default function VerifyTokenForm() {
   }
 
   return (
-    <div className="">
+    <div className="w-11/12 p-12 px-6 py-10 rounded-lg sm:w-8/12 md:w-6/12 lg:w-5/12 2xl:w-3/12 sm:px-10 sm:py-6">
       {message ? (
         <Alert
           className={`${formSuccess ? "alert-info" : "alert-error"} mb-10`}
@@ -74,11 +74,11 @@ export default function VerifyTokenForm() {
           {message}
         </Alert>
       ) : null}
-      <h2 className="">Sign in</h2>
-      <p className="">Hi, Welcome back</p>
+      <h2 className="mb-4 text-4xl font-semibold">Sign in</h2>
+      <p className="mb-4 font-medium">Hi, Welcome back</p>
       <form onSubmit={handleSubmit}>
-        <div className="">
-          <label htmlFor="email" className="">
+        <div className="form-control">
+          <label htmlFor="email" className="label">
             Email
           </label>
           <input
@@ -89,13 +89,13 @@ export default function VerifyTokenForm() {
             onChange={(ev) =>
               setFormData({ ...formData, email: ev.target.value })
             }
-            className=""
+            className="input input-bordered"
           />
         </div>
         {errors?.email ? (
           <InputErrorMessage>{errors?.email}</InputErrorMessage>
         ) : null}
-        <div className="">
+        <div className="form-control">
           <label htmlFor="token" className="label">
             Token
           </label>
@@ -107,14 +107,14 @@ export default function VerifyTokenForm() {
             onChange={(ev) =>
               setFormData({ ...formData, token: ev.target.value })
             }
-            className=""
+            className="input input-bordered"
           />
         </div>
         {errors?.token ? (
           <InputErrorMessage>{errors?.token}</InputErrorMessage>
         ) : null}
-        <div className="">
-          <button className="">Sign in</button>
+        <div className="mt-6 form-control">
+          <button className="btn btn-primary no-animation">Sign in</button>
         </div>
       </form>
     </div>

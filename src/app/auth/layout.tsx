@@ -11,14 +11,12 @@ export default function AuthLayout({
   children: React.ReactNode
 }) {
   return (
-    <main data-theme="winter">
-      <div className="flex flex-col h-screen">
-        <div className="px-4 py-8 mx-8 text-center border-b border-gray-300 header">
-          <h1 className="font-semibold">OAuth Flow app\auth\layout.tsx</h1>
+    <main data-theme="">
+      <div className="">
+        <div className="">
+          <h1 className="">OAuth Flow app\auth\layout.tsx</h1>
         </div>
-        <div className="grid mx-2 my-20 place-items-center sm:my-auto">
-          {children}
-        </div>
+        <div className="">{children}</div>
       </div>
     </main>
   )
