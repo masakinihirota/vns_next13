@@ -1,47 +1,61 @@
 "use client"
 
+import { zodResolver } from "@hookform/resolvers/zod"
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
-// import { Link } from "lucide-react"
-import Link from "next/link"
+import { Link } from "lucide-react"
 import { useEffect } from "react"
+import { useForm } from "react-hook-form"
+import * as z from "zod"
 
-import Messages from "@/app/auth/oauth/signin/messages"
+import Messages from "@/app/auth/signin/messages"
+import { Button } from "@/components/ui/button"
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
+import { Spinner } from "@/components/ui/spinner"
+import { Toaster } from "@/components/ui/toaster"
+import { useToast } from "@/components/ui/use-toast"
 
-// const formSchema = z.object({
-//   email: z.string().email({
-//     message: "Invalid"
-//   })
-// })
+const formSchema = z.object({
+  email: z.string().email({
+    message: "Invalid"
+  })
+})
 
 export default function SignIn() {
   const supabase = createClientComponentClient()
-  // const { toast } = useToast()
-  // const { ...form } = useForm<z.infer<typeof formSchema>>({
-  //   resolver: zodResolver(formSchema),
-  //   defaultValues: {
-  //     email: ""
-  //   }
-  // })
+  const { toast } = useToast()
+  const { ...form } = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      email: ""
+    }
+  })
 
-  // async function onSubmit(values: z.infer<typeof formSchema>) {
-  //   const { email } = values
-  //   const { error } = await supabase.auth.signInWithOtp({
-  //     email
-  //   })
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    const { email } = values
+    const { error } = await supabase.auth.signInWithOtp({
+      email
+    })
 
-  //   if (error) {
-  //     toast({
-  //       description: `warn! ${error?.message}`
-  //     })
+    if (error) {
+      toast({
+        description: `warn! ${error?.message}`
+      })
 
-  //     return
-  //   }
+      return
+    }
 
-  //   toast({
-  //     description: "🎉 Plz! Check your email for sign in link."
-  //   })
-  // }
+    toast({
+      description: "🎉 Plz! Check your email for sign in link."
+    })
+  }
 
   useEffect(() => {
     const { data: authListener } = supabase.auth.onAuthStateChange(
@@ -66,8 +80,11 @@ export default function SignIn() {
         <br />
 
         {/* Mail  */}
-        <div className="">
-          <Link href="/" className="">
+        <div className="flex flex-col justify-center flex-1 w-full gap-2 px-8 sm:max-w-md">
+          <Link
+            href="/"
+            className="absolute flex items-center px-4 py-2 text-sm no-underline rounded-md left-8 top-8 text-foreground bg-btn-background hover:bg-btn-background-hover group"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -78,46 +95,88 @@ export default function SignIn() {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className=""
+              className="w-4 h-4 mr-2 transition-transform group-hover:-translate-x-1"
             >
               <polyline points="15 18 9 12 15 6" />
             </svg>
             Back
           </Link>
 
-          <form className="" action="/auth/email/signin" method="post">
-            <label className="" htmlFor="email">
+          <form
+            className="flex flex-col justify-center flex-1 w-full gap-2 text-foreground"
+            action="/auth/email/signin"
+            method="post"
+          >
+            <label className="text-md" htmlFor="email">
               Email
             </label>
             <input
-              className=""
+              className="px-4 py-2 mb-6 border rounded-md bg-inherit"
               name="email"
               placeholder="you@example.com"
               required
             />
-            <label className="" htmlFor="password">
+            <label className="text-md" htmlFor="password">
               Password
             </label>
             <input
-              className=""
+              className="px-4 py-2 mb-6 border rounded-md bg-inherit"
               type="password"
               name="password"
               placeholder="••••••••"
               required
             />
-            <button className="">Sign In</button>
-            <button formAction="/auth/email/signup" className="">
+            <button className="px-4 py-2 mb-2 text-white bg-green-700 rounded">
+              Sign In
+            </button>
+            <button
+              formAction="/auth/email/signup"
+              className="px-4 py-2 mb-2 text-black border border-gray-700 rounded"
+            >
               Sign Up
             </button>
             <Messages />
           </form>
         </div>
 
+        {/* Mail One Time Password */}
+        <section className="">
+          <div className="">
+            <p className="">Login</p>
+            <p className="">Enter your email to receive a one-time password</p>
+          </div>
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="w-full ">
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="Enter your email" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <Button type="submit" size="sm" className="w-full">
+                {form.control._formState.isSubmitting ? (
+                  <Spinner />
+                ) : (
+                  "Send password"
+                )}
+              </Button>
+            </form>
+          </Form>
+          <Separator />
+          <Toaster />
+        </section>
+        <br />
         <Separator />
 
         {/* OAuth */}
         <div className="">
-          <a className="" href="/auth/oauth/github">
+          <a className="" href="/auth/github">
             <svg
               // GitHub
               width="24"
@@ -134,7 +193,7 @@ export default function SignIn() {
             </svg>
             Sign in with GitHub
           </a>
-          <a className="" href="/auth/oauth/slack">
+          <a className="" href="/auth/slack">
             <svg
               // Slack
               xmlns="http://www.w3.org/2000/svg"
@@ -165,7 +224,7 @@ export default function SignIn() {
             </svg>
             Sign in with Slack
           </a>
-          <a className="" href="/auth/oauth/google">
+          <a className="" href="/auth/google">
             <svg
               // Google
               xmlns="http://www.w3.org/2000/svg"
@@ -263,9 +322,6 @@ export default function SignIn() {
             Sign in with Azure
           </a> */}
         </div>
-        <a className="hover:bg-gray-400" href="/">
-          TOP
-        </a>
         <div />
       </div>
     </div>
