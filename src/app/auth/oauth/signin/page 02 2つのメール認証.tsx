@@ -104,7 +104,7 @@ export default function SignIn() {
 
           <form
             className="flex flex-col justify-center flex-1 w-full gap-2 text-foreground"
-            action="/auth_email/sign-in"
+            action="/auth/email/sign-in"
             method="post"
           >
             <label className="text-md" htmlFor="email">
@@ -130,7 +130,7 @@ export default function SignIn() {
               Sign In
             </button>
             <button
-              formAction="/auth_email/sign-up"
+              formAction="/auth/email/sign-up"
               className="px-4 py-2 mb-2 text-black border border-gray-700 rounded"
             >
               Sign Up

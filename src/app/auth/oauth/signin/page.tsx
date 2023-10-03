@@ -84,7 +84,7 @@ export default function SignIn() {
             Back
           </Link>
 
-          <form className="" action="/auth_email/sign-in" method="post">
+          <form className="" action="/auth/email/sign-in" method="post">
             <label className="" htmlFor="email">
               Email
             </label>
@@ -105,7 +105,7 @@ export default function SignIn() {
               required
             />
             <button className="">Sign In</button>
-            <button formAction="/auth_email/sign-up" className="">
+            <button formAction="/auth/email/sign-up" className="">
               Sign Up
             </button>
             <Messages />
