@@ -41,7 +41,7 @@ export default async function TopNav() {
               <LogoutButton />
             </div>
           ) : (
-            <Link className="hover:bg-gray-400" href="/auth/oauth/signin">
+            <Link className="hover:bg-gray-400" href="/auth/signin">
               signin
             </Link>
           )}

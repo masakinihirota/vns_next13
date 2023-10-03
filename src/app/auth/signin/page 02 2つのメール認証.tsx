@@ -7,7 +7,7 @@ import { useEffect } from "react"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 
-import Messages from "@/app/auth/oauth/signin/messages"
+import Messages from "@/app/auth/signin/messages"
 import { Button } from "@/components/ui/button"
 import {
   Form,
@@ -104,7 +104,7 @@ export default function SignIn() {
 
           <form
             className="flex flex-col justify-center flex-1 w-full gap-2 text-foreground"
-            action="/auth/email/sign-in"
+            action="/auth/email/signin"
             method="post"
           >
             <label className="text-md" htmlFor="email">
@@ -130,7 +130,7 @@ export default function SignIn() {
               Sign In
             </button>
             <button
-              formAction="/auth/email/sign-up"
+              formAction="/auth/email/signup"
               className="px-4 py-2 mb-2 text-black border border-gray-700 rounded"
             >
               Sign Up
