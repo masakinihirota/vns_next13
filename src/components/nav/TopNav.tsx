@@ -41,15 +41,9 @@ export default async function TopNav() {
               <LogoutButton />
             </div>
           ) : (
-            <Link className="hover:bg-gray-400" href="/auth/signin">
+            <Link className="hover:bg-gray-400" href="/auth/oauth/signin">
               signin
             </Link>
-            // <Link
-            //   href="/login"
-            //   className="px-4 py-2 no-underline rounded-md bg-btn-background hover:bg-btn-background-hover"
-            // >
-            //   Login
-            // </Link>
           )}
         </div>
       </div>

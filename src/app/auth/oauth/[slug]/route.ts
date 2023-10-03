@@ -10,7 +10,7 @@ export async function GET(
   const provider = params.slug as Provider
 
   const options: { redirectTo: string; scopes?: string } = {
-    redirectTo: `${new URL(req.url).origin}/auth/callback`
+    redirectTo: `${new URL(req.url).origin}/auth/oauth/callback`
   }
 
   if (provider == "azure") {
@@ -29,5 +29,5 @@ export async function GET(
     return NextResponse.redirect(data.url)
   }
 
-  return NextResponse.redirect(new URL("/auth/signin", req.url))
+  return NextResponse.redirect(new URL("/auth/oauth/signin", req.url))
 }
