@@ -1,7 +1,8 @@
 "use client"
 
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
-import { Link } from "lucide-react"
+// import { Link } from "lucide-react"
+import Link from "next/link"
 import { useEffect } from "react"
 
 import Messages from "@/app/auth/oauth/signin/messages"
@@ -84,7 +85,7 @@ export default function SignIn() {
             Back
           </Link>
 
-          <form className="" action="/auth/email/sign-in" method="post">
+          <form className="" action="/auth/email/signin" method="post">
             <label className="" htmlFor="email">
               Email
             </label>
@@ -105,7 +106,7 @@ export default function SignIn() {
               required
             />
             <button className="">Sign In</button>
-            <button formAction="/auth/email/sign-up" className="">
+            <button formAction="/auth/email/signup" className="">
               Sign Up
             </button>
             <Messages />
@@ -262,6 +263,9 @@ export default function SignIn() {
             Sign in with Azure
           </a> */}
         </div>
+        <a className="hover:bg-gray-400" href="/">
+          TOP
+        </a>
         <div />
       </div>
     </div>
