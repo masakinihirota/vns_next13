@@ -4,8 +4,6 @@ import { Metadata } from "next"
 import React from "react"
 
 import { ThemeProvider } from "@/components/client/theme-provider"
-import LeftMenu from "@/components/nav/LeftMenu"
-import TopNav from "@/components/nav/TopNav"
 
 import { languages } from "./i18n/settings"
 // import { Providers } from "./providers"
@@ -41,14 +39,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* ↓ログイン画面に影響を与えている */}
-          <main className="flex flex-col items-center min-h-screen bg-background">
-            <TopNav />
-            <div className="flex flex-grow w-full">
-              <LeftMenu lng={lng} />
-              <div className="w-full">{children}</div>
-            </div>
-          </main>
+          <main>{children}</main>
         </ThemeProvider>
       </body>
     </html>
