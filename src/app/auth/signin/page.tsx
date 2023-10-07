@@ -1,60 +1,26 @@
 "use client"
 
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
 import Link from "next/link"
-import { useEffect } from "react"
 
 import { CreateAccountCard } from "./create-account-card"
 
-// const formSchema = z.object({
-//   email: z.string().email({
-//     message: "Invalid"
-//   })
-// })
-
 export default function SignIn() {
-  const supabase = createClientComponentClient()
-  // const { toast } = useToast()
-  // const { ...form } = useForm<z.infer<typeof formSchema>>({
-  //   resolver: zodResolver(formSchema),
-  //   defaultValues: {
-  //     email: ""
-  //   }
-  // })
+  //   const supabase = createClientComponentClient()
 
-  // async function onSubmit(values: z.infer<typeof formSchema>) {
-  //   const { email } = values
-  //   const { error } = await supabase.auth.signInWithOtp({
-  //     email
-  //   })
+  //   useEffect(() => {
+  //     const { data: authListener } = supabase.auth.onAuthStateChange(
+  //       // eslint-disable-next-line no-unused-vars
+  //       async (event, _session) => {
+  //         if (event === "SIGNED_IN") {
+  //           window.location.href = "/"
+  //         }
+  //       }
+  //     )
 
-  //   if (error) {
-  //     toast({
-  //       description: `warn! ${error?.message}`
-  //     })
-
-  //     return
-  //   }
-
-  //   toast({
-  //     description: "🎉 Plz! Check your email for sign in link."
-  //   })
-  // }
-
-  useEffect(() => {
-    const { data: authListener } = supabase.auth.onAuthStateChange(
-      // eslint-disable-next-line no-unused-vars
-      async (event, _session) => {
-        if (event === "SIGNED_IN") {
-          window.location.href = "/"
-        }
-      }
-    )
-
-    return () => {
-      authListener.subscription.unsubscribe()
-    }
-  }, [supabase.auth])
+  //     return () => {
+  //       authListener.subscription.unsubscribe()
+  //     }
+  //   }, [supabase.auth])
 
   return (
     <div>
@@ -77,7 +43,6 @@ export default function SignIn() {
       </Link>
       <div className="flex justify-center">
         <CreateAccountCard />
-        {/* <CardOAuth /> */}
       </div>
     </div>
   )

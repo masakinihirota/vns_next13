@@ -3,7 +3,6 @@
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
 import { useEffect } from "react"
 
-// import { Icons } from "@/components/icons"
 import { Button } from "@/components/ui/button"
 import {
   Card,
