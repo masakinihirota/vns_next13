@@ -5,7 +5,9 @@ import Link from "next/link"
 import { useEffect } from "react"
 
 import Messages from "@/app/auth/signin/messages"
-import { Separator } from "@/components/ui/separator"
+import { Separator } from "@/components/ui/etc/separator"
+
+import { DemoCreateAccount } from "./sample"
 
 // const formSchema = z.object({
 //   email: z.string().email({
@@ -59,60 +61,27 @@ export default function SignIn() {
 
   return (
     <div>
-      <div className="">
+      <DemoCreateAccount />
+      <Link href="/" className="">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className=""
+        >
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+        Back
+      </Link>
+      <div className="border-4 rounded-md">
         <h2 className="">Sign in</h2>
-        <p className="">Hi, Welcome back</p>
         <br />
-
-        {/* Mail  */}
-        <div className="">
-          <Link href="/" className="">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className=""
-            >
-              <polyline points="15 18 9 12 15 6" />
-            </svg>
-            Back
-          </Link>
-
-          <form className="" action="/auth/email/signin" method="post">
-            <label className="" htmlFor="email">
-              Email
-            </label>
-            <input
-              className=""
-              name="email"
-              placeholder="you@example.com"
-              required
-            />
-            <label className="" htmlFor="password">
-              Password
-            </label>
-            <input
-              className=""
-              type="password"
-              name="password"
-              placeholder="••••••••"
-              required
-            />
-            <button className="">Sign In</button>
-            <button formAction="/auth/email/signup" className="">
-              Sign Up
-            </button>
-            <Messages />
-          </form>
-        </div>
-
-        <Separator />
 
         {/* OAuth */}
         <div className="">
@@ -262,6 +231,39 @@ export default function SignIn() {
             Sign in with Azure
           </a> */}
         </div>
+
+        <Separator />
+
+        {/* Mail  */}
+        <div className="">
+          <form className="" action="/auth/email/signin" method="post">
+            <label className="" htmlFor="email">
+              Email
+            </label>
+            <input
+              className=""
+              name="email"
+              placeholder="you@example.com"
+              required
+            />
+            <label className="" htmlFor="password">
+              Password
+            </label>
+            <input
+              className=""
+              type="password"
+              name="password"
+              placeholder="••••••••"
+              required
+            />
+            <button className="">Sign In</button>
+            <button formAction="/auth/email/signup" className="">
+              Sign Up
+            </button>
+            <Messages />
+          </form>
+        </div>
+
         <a className="hover:bg-gray-400" href="/">
           TOP
         </a>

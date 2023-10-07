@@ -8,19 +8,19 @@ import { useForm } from "react-hook-form"
 import { RxGithubLogo } from "react-icons/rx"
 import * as z from "zod"
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/etc/button"
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormMessage
-} from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { Separator } from "@/components/ui/separator"
-import { Spinner } from "@/components/ui/spinner"
-import { Toaster } from "@/components/ui/toaster"
-import { useToast } from "@/components/ui/use-toast"
+} from "@/components/ui/etc/form"
+import { Input } from "@/components/ui/etc/input"
+import { Separator } from "@/components/ui/etc/separator"
+import { Spinner } from "@/components/ui/etc/spinner"
+import { Toaster } from "@/components/ui/etc/toaster"
+import { useToast } from "@/components/ui/etc/use-toast"
 
 const formSchema = z.object({
   email: z.string().email({
