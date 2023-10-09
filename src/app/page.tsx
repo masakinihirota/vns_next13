@@ -29,6 +29,9 @@ export default async function Index() {
         <Link className="hover:bg-gray-400" href="/auth/signin">
           signin
         </Link>
+        <Link className="hover:bg-gray-400" href="/about">
+          About
+        </Link>
       </div>
 
       <Footer />

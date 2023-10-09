@@ -6,8 +6,7 @@ import {
   createPagesBrowserClient
 } from "@supabase/auth-helpers-nextjs"
 import { useRouter } from "next/navigation"
-import { createContext, useContext, useEffect } from "react"
-import React from "react"
+import React, { createContext, useContext, useEffect } from "react"
 type MaybeSession = Session | null
 
 type SupabaseContext = {
