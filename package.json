@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "check-types": "tsc --noEmit",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -13,7 +14,8 @@
     "test:ui": "vitest --ui",
     "typecheck": "tsc --noEmit",
     "format": "eslint --ext .js,.ts,.tsx . && prettier --check '**/*.{ts,tsx,mdx}' --cache",
-    "format:fix": "eslint --ext .ts,.js,.tsx . --fix && prettier --write '**/*.{ts,tsx,mdx}' --cache"
+    "format:fix": "eslint --ext .ts,.js,.tsx . --fix && prettier --write '**/*.{ts,tsx,mdx}' --cache",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
@@ -95,6 +97,6 @@
     "vitest": "^0.34.5"
   },
   "lint-staged": {
-    "*.{tsx,ts}": "npm run lint"
+    "*.{tsx,ts}": "npm run format"
   }
 }

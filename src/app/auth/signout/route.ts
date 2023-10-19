@@ -17,8 +17,6 @@ export async function POST(request: NextRequest) {
     await supabase.auth.signOut()
   }
 
-  // await supabase.auth.signOut()
-
   // ログアウト後のリダイレクトページを指定
   return NextResponse.redirect(`${requestUrl.origin}/`, {
     // a 301 status is required to redirect from a POST to a GET route

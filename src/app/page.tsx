@@ -29,6 +29,15 @@ export default async function Index() {
         <Link className="hover:bg-gray-400" href="/auth/signin">
           signin
         </Link>
+        <Link className="hover:bg-gray-400" href="/about">
+          About
+        </Link>
+      </div>
+      <div className="flex flex-col gap-2">
+        <Link href="./examples/client-component">Client Component Example</Link>
+        <Link href="./examples/route-handler">Route Handler Example</Link>
+        <Link href="./examples/server-action">Server Action Example</Link>
+        <Link href="./examples/server-component">Server Component Example</Link>
       </div>
 
       <Footer />

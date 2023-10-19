@@ -1,5 +1,10 @@
 {
   "extends": [
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "eslint:recommended",
     "next/core-web-vitals",
@@ -21,6 +26,8 @@
   "plugins": ["react", "import", "unused-imports"],
   "root": true,
   "rules": {
+    // デフォルトエクスポート以外のエクスポートをデフォルトエクスポートとしてインポートすることを禁止します。
+    "import/no-named-as-default-member": "off",
     // TypeScriptで未使用の変数を許可するかどうかを指定します。この例では、offに設定されているため、未使用の変数を許可します。
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-explicit-any": "off",

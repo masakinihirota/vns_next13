@@ -5,23 +5,6 @@ import Link from "next/link"
 import { CreateAccountCard } from "./create-account-card"
 
 export default function SignIn() {
-  //   const supabase = createClientComponentClient()
-
-  //   useEffect(() => {
-  //     const { data: authListener } = supabase.auth.onAuthStateChange(
-  //       // eslint-disable-next-line no-unused-vars
-  //       async (event, _session) => {
-  //         if (event === "SIGNED_IN") {
-  //           window.location.href = "/"
-  //         }
-  //       }
-  //     )
-
-  //     return () => {
-  //       authListener.subscription.unsubscribe()
-  //     }
-  //   }, [supabase.auth])
-
   return (
     <div>
       <Link href="/" className="select-none">

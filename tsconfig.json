@@ -31,5 +31,5 @@
     ".next/types/**/*.ts",
     "src/app/(admin)/layout"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", ".next"]
 }
