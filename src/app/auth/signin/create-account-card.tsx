@@ -25,7 +25,6 @@ export function CreateAccountCard() {
         }
       }
     )
-
     return () => {
       authListener.subscription.unsubscribe()
     }

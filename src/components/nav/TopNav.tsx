@@ -12,6 +12,7 @@ export default async function TopNav() {
   const {
     data: { user }
   } = await supabase.auth.getUser()
+  // console.log(await supabase.auth.getUser())
 
   return (
     <nav className="flex justify-center w-full h-16 border-b border-current">
