@@ -12,12 +12,12 @@ export function withMiddleware1(middleware) {
     const pathname = req.nextUrl.pathname
     console.log("middleware1 =>", { pathname })
 
-    const supportedLanguages = ["en", "de", "ja"]
+    // console.log("languages", languages)
 
     // Root path の場合言語判定をしない
     // if (req.nextUrl.pathname === "/") {
     // if (!["en", "de", "ja"].includes(req.cookies.get("lang"))) {
-    if (!supportedLanguages.includes(req.cookies.get("lang"))) {
+    if (!languages.includes(req.cookies.get("lang"))) {
       return middleware(req, event)
     }
 
